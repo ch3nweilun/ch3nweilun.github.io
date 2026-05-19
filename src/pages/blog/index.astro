@@ -1,0 +1,54 @@
+---
+import NetworkBackground from '../../components/NetworkBackground.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { blogPosts } from '../../data/site';
+---
+
+<BaseLayout title="Research Notes | AI & Data Research" description="Replaceable research notes for an academic homepage.">
+  <NetworkBackground />
+  <section class="section notes-page">
+    <p class="section-kicker">Research Notes</p>
+    <h1>Replace this section with reading notes, experiment logs, or short essays.</h1>
+    <p class="section-copy">The blog is optional. You can keep it for research writing or remove the navigation item in `src/layouts/BaseLayout.astro`.</p>
+    <div class="grid">
+      {blogPosts.map((post) => (
+        <article class="card note-card">
+          <time>{post.date}</time>
+          <h2>{post.title}</h2>
+          <p>{post.summary}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .notes-page {
+    min-height: calc(100vh - 160px);
+  }
+
+  h1 {
+    max-width: 920px;
+    margin: 0 0 1rem;
+    font-size: clamp(2.8rem, 7vw, 6.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.08em;
+  }
+
+  time {
+    color: var(--mint);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  p {
+    color: var(--muted);
+    line-height: 1.7;
+  }
+</style>

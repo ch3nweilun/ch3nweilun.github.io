@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AI data favicon">
+  <rect width="64" height="64" rx="16" fill="#07111f"/>
+  <path d="M18 42 31 20l15 24" fill="none" stroke="#21d4fd" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="18" cy="42" r="6" fill="#07111f" stroke="#78f8ff" stroke-width="3"/>
+  <circle cx="31" cy="20" r="6" fill="#07111f" stroke="#8affc1" stroke-width="3"/>
+  <circle cx="46" cy="44" r="6" fill="#07111f" stroke="#21d4fd" stroke-width="3"/>
+</svg>

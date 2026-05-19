@@ -1,0 +1,88 @@
+<div class="network-bg" aria-hidden="true">
+  <span class="node node-a"></span>
+  <span class="node node-b"></span>
+  <span class="node node-c"></span>
+  <span class="node node-d"></span>
+  <span class="link link-a"></span>
+  <span class="link link-b"></span>
+  <span class="link link-c"></span>
+</div>
+
+<style>
+  .network-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 18% 18%, rgba(33, 212, 253, 0.18), transparent 26rem),
+      radial-gradient(circle at 82% 12%, rgba(138, 255, 193, 0.14), transparent 24rem),
+      radial-gradient(circle at 50% 85%, rgba(78, 94, 255, 0.14), transparent 26rem),
+      linear-gradient(135deg, #040914 0%, #07111f 46%, #050a12 100%);
+  }
+
+  .network-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(120, 248, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(120, 248, 255, 0.08) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(circle at center, black, transparent 76%);
+  }
+
+  .network-bg::after {
+    content: '';
+    position: absolute;
+    inset: -20%;
+    background: conic-gradient(from 180deg, transparent, rgba(33, 212, 253, 0.1), transparent, rgba(138, 255, 193, 0.08), transparent);
+    animation: drift 26s linear infinite;
+    opacity: 0.75;
+  }
+
+  .node,
+  .link {
+    position: absolute;
+    display: block;
+  }
+
+  .node {
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    background: #b8fff1;
+    box-shadow: 0 0 24px #21d4fd, 0 0 54px rgba(33, 212, 253, 0.55);
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  .node-a { left: 12%; top: 34%; }
+  .node-b { left: 38%; top: 17%; animation-delay: 0.8s; }
+  .node-c { right: 18%; top: 38%; animation-delay: 1.5s; }
+  .node-d { left: 62%; bottom: 18%; animation-delay: 2.2s; }
+
+  .link {
+    height: 1px;
+    transform-origin: left center;
+    background: linear-gradient(90deg, transparent, rgba(120, 248, 255, 0.6), transparent);
+    box-shadow: 0 0 18px rgba(33, 212, 253, 0.45);
+  }
+
+  .link-a { left: 13%; top: 35%; width: 31%; transform: rotate(-25deg); }
+  .link-b { left: 39%; top: 19%; width: 44%; transform: rotate(18deg); }
+  .link-c { left: 57%; bottom: 23%; width: 27%; transform: rotate(-34deg); }
+
+  @keyframes drift {
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.72; }
+    50% { transform: scale(1.45); opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .network-bg::after,
+    .node { animation: none; }
+  }
+</style>
