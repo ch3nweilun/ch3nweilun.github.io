@@ -50,17 +50,17 @@ const navItems = [
 
 <style is:global>
   :root {
-    color-scheme: dark;
-    --bg: #050a12;
-    --panel: rgba(9, 20, 35, 0.74);
-    --panel-strong: rgba(14, 29, 49, 0.92);
-    --text: #edf7ff;
-    --muted: #9fb2c8;
-    --cyan: #21d4fd;
-    --mint: #8affc1;
-    --blue: #4e5eff;
-    --line: rgba(161, 234, 255, 0.18);
-    --shadow: 0 22px 80px rgba(0, 0, 0, 0.38);
+    color-scheme: light;
+    --bg: #f6fbff;
+    --panel: rgba(255, 255, 255, 0.78);
+    --panel-strong: rgba(255, 255, 255, 0.94);
+    --text: #102033;
+    --muted: #5d6f86;
+    --cyan: #38bdf8;
+    --mint: #60a5fa;
+    --blue: #2563eb;
+    --line: rgba(37, 99, 235, 0.14);
+    --shadow: 0 24px 70px rgba(37, 99, 235, 0.12);
     font-family: Sora, Avenir Next, Montserrat, Trebuchet MS, sans-serif;
   }
 
@@ -83,7 +83,7 @@ const navItems = [
     position: fixed;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(180deg, rgba(5, 10, 18, 0.15), rgba(5, 10, 18, 0.94) 62%, #050a12 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.24), rgba(246, 251, 255, 0.86) 68%, #f6fbff 100%);
   }
 
   a {
@@ -100,8 +100,8 @@ const navItems = [
     justify-content: space-between;
     gap: 1rem;
     padding: 1rem clamp(1rem, 4vw, 4rem);
-    border-bottom: 1px solid rgba(161, 234, 255, 0.12);
-    background: rgba(5, 10, 18, 0.72);
+    border-bottom: 1px solid rgba(37, 99, 235, 0.12);
+    background: rgba(255, 255, 255, 0.74);
     backdrop-filter: blur(18px);
   }
 
@@ -118,7 +118,7 @@ const navItems = [
     height: 0.85rem;
     border-radius: 999px;
     background: var(--mint);
-    box-shadow: 0 0 24px var(--cyan), 0 0 42px rgba(138, 255, 193, 0.45);
+    box-shadow: 0 0 22px rgba(56, 189, 248, 0.55), 0 0 42px rgba(37, 99, 235, 0.18);
   }
 
   nav {
@@ -138,9 +138,9 @@ const navItems = [
   }
 
   nav a:hover {
-    border-color: rgba(120, 248, 255, 0.28);
-    color: var(--text);
-    background: rgba(120, 248, 255, 0.08);
+    border-color: rgba(37, 99, 235, 0.22);
+    color: var(--blue);
+    background: rgba(219, 234, 254, 0.72);
   }
 
   main {
@@ -186,7 +186,7 @@ const navItems = [
     border: 1px solid var(--line);
     border-radius: 28px;
     padding: 1.35rem;
-    background: linear-gradient(145deg, rgba(12, 26, 45, 0.82), rgba(9, 16, 29, 0.64));
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(239, 248, 255, 0.72));
     box-shadow: var(--shadow);
   }
 
@@ -197,11 +197,11 @@ const navItems = [
   }
 
   .pill {
-    border: 1px solid rgba(120, 248, 255, 0.22);
+    border: 1px solid rgba(37, 99, 235, 0.16);
     border-radius: 999px;
     padding: 0.35rem 0.65rem;
-    color: #c9faff;
-    background: rgba(33, 212, 253, 0.08);
+    color: #1d4ed8;
+    background: rgba(219, 234, 254, 0.7);
     font-size: 0.78rem;
   }
 
@@ -210,7 +210,7 @@ const navItems = [
     justify-content: space-between;
     gap: 1rem;
     padding: 2rem clamp(1rem, 4vw, 4rem);
-    border-top: 1px solid rgba(161, 234, 255, 0.12);
+    border-top: 1px solid rgba(37, 99, 235, 0.12);
     color: var(--muted);
   }
 

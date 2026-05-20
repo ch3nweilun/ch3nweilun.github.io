@@ -11,7 +11,7 @@
     const ctx = canvas.getContext('2d', { alpha: true });
     if (!ctx) return;
 
-    const colors = ['33, 212, 253', '138, 255, 193', '78, 94, 255'];
+    const colors = ['37, 99, 235', '56, 189, 248', '96, 165, 250'];
     const particles = [];
     const maxParticles = 110;
     let width = 0;
@@ -90,15 +90,15 @@
 
         const alpha = Math.max(0, p.life);
         const glow = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius * 7);
-        glow.addColorStop(0, `rgba(${p.color}, ${0.42 * alpha})`);
-        glow.addColorStop(0.38, `rgba(${p.color}, ${0.18 * alpha})`);
+        glow.addColorStop(0, `rgba(${p.color}, ${0.3 * alpha})`);
+        glow.addColorStop(0.38, `rgba(${p.color}, ${0.12 * alpha})`);
         glow.addColorStop(1, `rgba(${p.color}, 0)`);
         ctx.fillStyle = glow;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius * 7, 0, Math.PI * 2);
         ctx.fill();
 
-        ctx.fillStyle = `rgba(230, 255, 255, ${0.72 * alpha})`;
+        ctx.fillStyle = `rgba(${p.color}, ${0.64 * alpha})`;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fill();
@@ -131,7 +131,7 @@
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    opacity: 0.9;
+    opacity: 0.72;
     mix-blend-mode: screen;
   }
 

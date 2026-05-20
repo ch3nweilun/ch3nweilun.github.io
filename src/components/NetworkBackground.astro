@@ -15,10 +15,10 @@
     z-index: -2;
     overflow: hidden;
     background:
-      radial-gradient(circle at 18% 18%, rgba(33, 212, 253, 0.18), transparent 26rem),
-      radial-gradient(circle at 82% 12%, rgba(138, 255, 193, 0.14), transparent 24rem),
-      radial-gradient(circle at 50% 85%, rgba(78, 94, 255, 0.14), transparent 26rem),
-      linear-gradient(135deg, #040914 0%, #07111f 46%, #050a12 100%);
+      radial-gradient(circle at 16% 18%, rgba(56, 189, 248, 0.28), transparent 28rem),
+      radial-gradient(circle at 82% 10%, rgba(147, 197, 253, 0.3), transparent 25rem),
+      radial-gradient(circle at 50% 90%, rgba(37, 99, 235, 0.12), transparent 30rem),
+      linear-gradient(135deg, #ffffff 0%, #eef7ff 48%, #f8fbff 100%);
   }
 
   .network-bg::before {
@@ -26,8 +26,8 @@
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(120, 248, 255, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(120, 248, 255, 0.08) 1px, transparent 1px);
+      linear-gradient(rgba(37, 99, 235, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(37, 99, 235, 0.08) 1px, transparent 1px);
     background-size: 72px 72px;
     mask-image: radial-gradient(circle at center, black, transparent 76%);
   }
@@ -36,9 +36,9 @@
     content: '';
     position: absolute;
     inset: -20%;
-    background: conic-gradient(from 180deg, transparent, rgba(33, 212, 253, 0.1), transparent, rgba(138, 255, 193, 0.08), transparent);
+    background: conic-gradient(from 180deg, transparent, rgba(56, 189, 248, 0.14), transparent, rgba(37, 99, 235, 0.08), transparent);
     animation: drift 26s linear infinite;
-    opacity: 0.75;
+    opacity: 0.58;
   }
 
   .node,
@@ -51,8 +51,8 @@
     width: 14px;
     height: 14px;
     border-radius: 999px;
-    background: #b8fff1;
-    box-shadow: 0 0 24px #21d4fd, 0 0 54px rgba(33, 212, 253, 0.55);
+    background: #2563eb;
+    box-shadow: 0 0 22px rgba(56, 189, 248, 0.75), 0 0 52px rgba(37, 99, 235, 0.28);
     animation: pulse 4s ease-in-out infinite;
   }
 
@@ -64,8 +64,8 @@
   .link {
     height: 1px;
     transform-origin: left center;
-    background: linear-gradient(90deg, transparent, rgba(120, 248, 255, 0.6), transparent);
-    box-shadow: 0 0 18px rgba(33, 212, 253, 0.45);
+    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.34), transparent);
+    box-shadow: 0 0 18px rgba(56, 189, 248, 0.26);
   }
 
   .link-a { left: 13%; top: 35%; width: 31%; transform: rotate(-25deg); }
