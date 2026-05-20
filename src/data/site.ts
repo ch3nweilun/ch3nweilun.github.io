@@ -34,47 +34,23 @@ export const researchAreas = [
   },
 ];
 
-export const publications = [
-  {
-    title: 'Placeholder Paper: Language-Enhanced Sequential Recommendation',
-    authors: 'Your Name, Collaborator A, Collaborator B',
-    venue: 'Conference / Journal Name',
-    year: '2026',
-    abstract:
-      'A replaceable publication entry describing an LLM-enhanced method for sequential recommendation and user preference modeling.',
-    tags: ['LLM4Rec', 'Sequential Recommendation'],
-    links: { pdf: '#', code: '#', bibtex: '#', doi: '#', arxiv: '#' },
-  },
-  {
-    title: 'Placeholder Paper: Mining User Intent from Large-Scale Interaction Logs',
-    authors: 'Your Name, Collaborator C',
-    venue: 'Workshop / Symposium Name',
-    year: '2025',
-    abstract:
-      'A replaceable publication entry about mining behavioral signals for personalized ranking and retrieval.',
-    tags: ['Data Mining', 'User Modeling'],
-    links: { pdf: '#', code: '#', bibtex: '#', doi: '#', arxiv: '#' },
-  },
-];
+export const publications: Array<{
+  title: string;
+  authors: string;
+  venue: string;
+  year: string;
+  abstract: string;
+  tags: string[];
+  links: Record<string, string>;
+}> = [];
 
-export const projects = [
-  {
-    title: 'LLM-Enhanced Recommendation Toolkit',
-    status: 'Research Prototype',
-    description:
-      'A modular experimental framework for evaluating language-model signals in recommendation pipelines.',
-    tags: ['PyTorch', 'LLM', 'RecSys'],
-    links: { github: '#', demo: '#', paper: '#' },
-  },
-  {
-    title: 'Behavior Mining Dashboard',
-    status: 'In Progress',
-    description:
-      'Interactive analysis for user sequences, item transitions, and long-tail recommendation behavior.',
-    tags: ['Data Mining', 'Visualization', 'Evaluation'],
-    links: { github: '#', demo: '#', paper: '#' },
-  },
-];
+export const projects: Array<{
+  title: string;
+  status: string;
+  description: string;
+  tags: string[];
+  links: Record<string, string>;
+}> = [];
 
 export const cvGroups = [
   {
@@ -97,19 +73,4 @@ export const contactLinks = [
   { label: 'Google Scholar', href: '#' },
   { label: 'ORCID', href: '#' },
   { label: 'Semantic Scholar', href: '#' },
-];
-
-export const blogPosts = [
-  {
-    title: 'Notes on LLMs for Recommendation',
-    date: '2026-05-19',
-    summary: 'A replaceable research note about using language models in recommendation systems.',
-    href: '#',
-  },
-  {
-    title: 'Evaluating Sequential Recommendation Models',
-    date: '2026-05-19',
-    summary: 'A placeholder note about offline metrics, leakage, and reproducible RecSys experiments.',
-    href: '#',
-  },
 ];

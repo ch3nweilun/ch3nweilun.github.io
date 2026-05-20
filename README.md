@@ -18,7 +18,6 @@ Edit these exports to personalize the site:
 - `projects`: research prototypes, systems, and demos.
 - `cvGroups`: education, service, awards, and other CV blocks.
 - `contactLinks`: scholarly profiles and contact links.
-- `blogPosts`: optional research-note previews.
 
 ## Local Development
 
