@@ -87,6 +87,9 @@ import { contactLinks, cvGroups, profile, projects, publications } from '../data
   <section id="cv" class="section split-section">
     <div>
       <p class="section-kicker">CV Snapshot</p>
+      <div class="profile-photo-card">
+        <img src="/profile.jpg" alt={`${profile.name} portrait`} loading="lazy" />
+      </div>
     </div>
     <div class="stack">
       {cvGroups.map((group) => (
@@ -270,6 +273,35 @@ import { contactLinks, cvGroups, profile, projects, publications } from '../data
   ul {
     margin: 0;
     padding-left: 1.2rem;
+  }
+
+  .profile-photo-card {
+    position: relative;
+    width: min(100%, 320px);
+    margin-top: 2rem;
+    border: 1px solid rgba(120, 248, 255, 0.2);
+    border-radius: 32px;
+    padding: 0.65rem;
+    background: linear-gradient(145deg, rgba(33, 212, 253, 0.16), rgba(138, 255, 193, 0.08));
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .profile-photo-card::before {
+    content: '';
+    position: absolute;
+    inset: -35%;
+    background: radial-gradient(circle, rgba(138, 255, 193, 0.18), transparent 58%);
+    pointer-events: none;
+  }
+
+  .profile-photo-card img {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 295 / 413;
+    border-radius: 24px;
+    object-fit: cover;
   }
 
   .contact-panel {
