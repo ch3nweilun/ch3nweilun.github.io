@@ -7,32 +7,7 @@ export const profile = {
   tagline: 'Building intelligent recommendation systems with language models and large-scale behavioral data.',
   summary:
     'I study how intelligent systems understand user behavior, mine large-scale data, and deliver trustworthy personalized recommendations.',
-  keywords: ['Recommender Systems', 'Large Language Models', 'Data Mining', 'User Modeling', 'Sequential Recommendation'],
 };
-
-export const researchAreas = [
-  {
-    title: 'Recommender Systems',
-    eyebrow: 'Personalization',
-    description:
-      'Modeling user intent, sequential behavior, and item relationships for accurate and explainable recommendation.',
-    methods: ['Sequential RecSys', 'Graph Learning', 'User Modeling'],
-  },
-  {
-    title: 'Large Language Models',
-    eyebrow: 'Reasoning & Knowledge',
-    description:
-      'Exploring how LLMs can enhance recommendation, representation learning, and data-driven decision systems.',
-    methods: ['LLM4Rec', 'Prompting', 'Knowledge Augmentation'],
-  },
-  {
-    title: 'Data Mining',
-    eyebrow: 'Patterns at Scale',
-    description:
-      'Mining noisy, sparse, and high-dimensional interaction data to discover robust behavioral patterns.',
-    methods: ['Behavior Mining', 'Evaluation', 'Representation Learning'],
-  },
-];
 
 export const publications: Array<{
   title: string;

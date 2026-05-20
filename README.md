@@ -12,8 +12,7 @@ src/data/site.ts
 
 Edit these exports to personalize the site:
 
-- `profile`: name, role, affiliation, location, email, summary, keywords.
-- `researchAreas`: research direction cards.
+- `profile`: name, role, affiliation, location, email, and summary.
 - `publications`: paper entries with PDF, Code, BibTeX, DOI, and arXiv slots.
 - `projects`: research prototypes, systems, and demos.
 - `cvGroups`: education, service, awards, and other CV blocks.

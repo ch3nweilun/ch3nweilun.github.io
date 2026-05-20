@@ -1,7 +1,7 @@
 ---
 import NetworkBackground from '../components/NetworkBackground.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { contactLinks, cvGroups, profile, projects, publications, researchAreas } from '../data/site';
+import { contactLinks, cvGroups, profile, projects, publications } from '../data/site';
 ---
 
 <BaseLayout>
@@ -12,9 +12,6 @@ import { contactLinks, cvGroups, profile, projects, publications, researchAreas 
       <p class="section-kicker">AI / Data / Network Lab</p>
       <h1>{profile.role}</h1>
       <p class="hero-summary">{profile.summary}</p>
-      <div class="pill-row">
-        {profile.keywords.map((keyword) => <span class="pill">{keyword}</span>)}
-      </div>
       <div class="hero-actions">
         <a class="primary-action" href="#publications">View Publications</a>
         <a class="secondary-action" href={`mailto:${profile.email}`}>Start Collaboration</a>
@@ -26,24 +23,6 @@ import { contactLinks, cvGroups, profile, projects, publications, researchAreas 
       <span class="orbit-node node-2">Sequential Rec</span>
       <span class="orbit-node node-3">Data Mining</span>
       <span class="orbit-node node-4">Evaluation</span>
-    </div>
-  </section>
-
-  <section id="research" class="section">
-    <p class="section-kicker">Research Agenda</p>
-    <h2 class="section-title">Three connected threads for intelligent personalization.</h2>
-    <p class="section-copy">Replace these cards with your own research questions, methods, datasets, and selected contributions.</p>
-    <div class="grid research-grid">
-      {researchAreas.map((area) => (
-        <article class="card research-card">
-          <p>{area.eyebrow}</p>
-          <h3>{area.title}</h3>
-          <p>{area.description}</p>
-          <div class="pill-row">
-            {area.methods.map((method) => <span class="pill">{method}</span>)}
-          </div>
-        </article>
-      ))}
     </div>
   </section>
 
