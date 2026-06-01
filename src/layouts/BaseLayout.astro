@@ -7,16 +7,10 @@ interface Props {
 }
 
 const {
-  title = `${profile.name} | AI & Data Research`,
+  title = `${profile.name} | Resume`,
   description = profile.summary,
 } = Astro.props;
 
-const navItems = [
-  { label: 'Publications', href: '/#publications' },
-  { label: 'Projects', href: '/#projects' },
-  { label: 'CV', href: '/#cv' },
-  { label: 'Contact', href: '/#contact' },
-];
 ---
 
 <!doctype html>
@@ -29,15 +23,6 @@ const navItems = [
     <title>{title}</title>
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="/" aria-label="Homepage">
-        <span class="brand-mark"></span>
-        <span>{profile.name}</span>
-      </a>
-      <nav aria-label="Primary navigation">
-        {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
-      </nav>
-    </header>
     <main>
       <slot />
     </main>
@@ -51,17 +36,13 @@ const navItems = [
 <style is:global>
   :root {
     color-scheme: light;
-    --bg: #f6fbff;
-    --panel: rgba(255, 255, 255, 0.78);
-    --panel-strong: rgba(255, 255, 255, 0.94);
-    --text: #102033;
-    --muted: #5d6f86;
-    --cyan: #38bdf8;
-    --mint: #60a5fa;
-    --blue: #2563eb;
-    --line: rgba(37, 99, 235, 0.14);
-    --shadow: 0 24px 70px rgba(37, 99, 235, 0.12);
-    font-family: Sora, Avenir Next, Montserrat, Trebuchet MS, sans-serif;
+    --bg: #d7ecff;
+    --panel: rgba(255, 255, 255, 0.84);
+    --text: #18202b;
+    --muted: #667085;
+    --accent: #2563eb;
+    --line: rgba(15, 23, 42, 0.1);
+    font-family: Inter, Avenir Next, Segoe UI, Helvetica Neue, Arial, sans-serif;
   }
 
   * { box-sizing: border-box; }
@@ -83,7 +64,9 @@ const navItems = [
     position: fixed;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.24), rgba(246, 251, 255, 0.86) 68%, #f6fbff 100%);
+    background:
+      radial-gradient(circle at 20% 0%, rgba(96, 165, 250, 0.28), transparent 28rem),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(215, 236, 255, 0.98));
   }
 
   a {
@@ -91,118 +74,9 @@ const navItems = [
     text-decoration: none;
   }
 
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 1rem clamp(1rem, 4vw, 4rem);
-    border-bottom: 1px solid rgba(37, 99, 235, 0.12);
-    background: rgba(255, 255, 255, 0.74);
-    backdrop-filter: blur(18px);
-  }
-
-  .brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-  }
-
-  .brand-mark {
-    width: 0.85rem;
-    height: 0.85rem;
-    border-radius: 999px;
-    background: var(--mint);
-    box-shadow: 0 0 22px rgba(56, 189, 248, 0.55), 0 0 42px rgba(37, 99, 235, 0.18);
-  }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 0.35rem;
-  }
-
-  nav a {
-    border: 1px solid transparent;
-    border-radius: 999px;
-    padding: 0.55rem 0.8rem;
-    color: var(--muted);
-    font-size: 0.9rem;
-    transition: 180ms ease;
-  }
-
-  nav a:hover {
-    border-color: rgba(37, 99, 235, 0.22);
-    color: var(--blue);
-    background: rgba(219, 234, 254, 0.72);
-  }
-
   main {
-    width: min(1180px, calc(100% - 2rem));
+    width: min(1080px, calc(100% - 2rem));
     margin: 0 auto;
-  }
-
-  .section {
-    padding: clamp(3.5rem, 8vw, 7rem) 0;
-  }
-
-  .section-kicker {
-    margin: 0 0 0.75rem;
-    color: var(--mint);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-  }
-
-  .section-title {
-    margin: 0 0 1rem;
-    max-width: 760px;
-    font-size: clamp(2rem, 5vw, 4.25rem);
-    line-height: 0.95;
-    letter-spacing: -0.06em;
-  }
-
-  .section-copy {
-    max-width: 740px;
-    color: var(--muted);
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    line-height: 1.8;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-  }
-
-  .card {
-    border: 1px solid var(--line);
-    border-radius: 28px;
-    padding: 1.35rem;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(239, 248, 255, 0.72));
-    box-shadow: var(--shadow);
-  }
-
-  .pill-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.45rem;
-  }
-
-  .pill {
-    border: 1px solid rgba(37, 99, 235, 0.16);
-    border-radius: 999px;
-    padding: 0.35rem 0.65rem;
-    color: #1d4ed8;
-    background: rgba(219, 234, 254, 0.7);
-    font-size: 0.78rem;
   }
 
   .site-footer {
@@ -210,19 +84,15 @@ const navItems = [
     justify-content: space-between;
     gap: 1rem;
     padding: 2rem clamp(1rem, 4vw, 4rem);
-    border-top: 1px solid rgba(37, 99, 235, 0.12);
+    border-top: 1px solid var(--line);
     color: var(--muted);
+    font-size: 0.9rem;
   }
 
   @media (max-width: 820px) {
-    .site-header,
     .site-footer {
       align-items: flex-start;
       flex-direction: column;
-    }
-
-    nav {
-      justify-content: flex-start;
     }
 
     .grid {
