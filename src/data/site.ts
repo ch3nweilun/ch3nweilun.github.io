@@ -6,7 +6,7 @@ export const profile = {
   email: 'ch3nweilun@gmail.com',
   tagline: 'Exploring artificial intelligence, data mining, and intelligent systems.',
   summary:
-    'I am interested in artificial intelligence, data mining, and intelligent systems, with a growing focus on recommender systems and large language models.',
+    'I am interested in artificial intelligence, data mining, and intelligent systems, with a growing focus on recommender systems, large language models, and data minimization approaches that reduce unnecessary data collection while preserving useful model behavior.',
 };
 
 export const publications: Array<{

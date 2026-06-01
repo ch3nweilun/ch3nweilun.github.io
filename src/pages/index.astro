@@ -6,11 +6,6 @@ import { contactLinks, cvGroups, profile, projects, publications } from '../data
 <BaseLayout title={`${profile.name} | Resume`} description={profile.summary}>
   <article class="resume-sheet">
     <header class="resume-header">
-      <div>
-        <h1>{profile.name}</h1>
-        <p class="role">{profile.role}</p>
-        <p class="summary">{profile.summary}</p>
-      </div>
       <aside class="contact-card" aria-label="Contact information">
         <img src="/profile.jpg" alt={`${profile.name} portrait`} loading="eager" />
         <div>
@@ -22,9 +17,27 @@ import { contactLinks, cvGroups, profile, projects, publications } from '../data
           {contactLinks.map((link) => <a href={link.href}>{link.label}</a>)}
         </div>
       </aside>
+      <div class="intro-card">
+        <h1>{profile.name}</h1>
+        <p class="role">{profile.role}</p>
+        <p class="summary">{profile.summary}</p>
+      </div>
     </header>
 
     <div class="resume-body">
+      <aside class="secondary-column">
+        {cvGroups.map((group) => (
+          <section class="resume-section compact">
+            <div class="section-heading">
+              <h2>{group.title}</h2>
+            </div>
+            <ul>
+              {group.items.map((item) => <li>{item}</li>)}
+            </ul>
+          </section>
+        ))}
+      </aside>
+
       <main class="primary-column">
         <section class="resume-section">
           <div class="section-heading">
@@ -99,25 +112,13 @@ import { contactLinks, cvGroups, profile, projects, publications } from '../data
           )}
         </section>
       </main>
-
-      <aside class="secondary-column">
-        {cvGroups.map((group) => (
-          <section class="resume-section compact">
-            <div class="section-heading">
-              <h2>{group.title}</h2>
-            </div>
-            <ul>
-              {group.items.map((item) => <li>{item}</li>)}
-            </ul>
-          </section>
-        ))}
-      </aside>
     </div>
   </article>
 </BaseLayout>
 
 <style>
   .resume-sheet {
+    --resume-columns: minmax(250px, 0.36fr) minmax(0, 1fr);
     margin: clamp(1.5rem, 4vw, 3rem) auto clamp(3rem, 7vw, 5rem);
     border: 1px solid var(--line);
     border-radius: 18px;
@@ -128,7 +129,7 @@ import { contactLinks, cvGroups, profile, projects, publications } from '../data
 
   .resume-header {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 300px;
+    grid-template-columns: var(--resume-columns);
     gap: clamp(1.5rem, 4vw, 3rem);
     padding: clamp(1.5rem, 5vw, 3.25rem);
     border-bottom: 1px solid var(--line);
@@ -138,8 +139,8 @@ import { contactLinks, cvGroups, profile, projects, publications } from '../data
   h1 {
     margin: 0;
     color: var(--text);
-    font-size: clamp(2.7rem, 7vw, 5.75rem);
-    line-height: 0.95;
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    line-height: 1.45;
   }
 
   .role {
@@ -147,7 +148,7 @@ import { contactLinks, cvGroups, profile, projects, publications } from '../data
     margin: 1rem 0 0;
     color: var(--text);
     font-size: clamp(1.05rem, 2vw, 1.35rem);
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.45;
   }
 
@@ -169,8 +170,6 @@ import { contactLinks, cvGroups, profile, projects, publications } from '../data
     display: grid;
     align-content: start;
     gap: 1rem;
-    border-left: 1px solid var(--line);
-    padding-left: clamp(1rem, 3vw, 2rem);
   }
 
   .contact-card img {
@@ -212,7 +211,7 @@ import { contactLinks, cvGroups, profile, projects, publications } from '../data
 
   .resume-body {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(250px, 0.36fr);
+    grid-template-columns: var(--resume-columns);
     gap: clamp(1.5rem, 4vw, 3rem);
     padding: clamp(1.5rem, 5vw, 3.25rem);
   }
@@ -304,9 +303,7 @@ import { contactLinks, cvGroups, profile, projects, publications } from '../data
     }
 
     .contact-card {
-      border-left: 0;
-      border-top: 1px solid var(--line);
-      padding: 1rem 0 0;
+      padding: 0;
     }
 
     .entry-topline {
