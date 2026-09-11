@@ -1,7 +1,7 @@
 export const profile = {
   name: 'Weilun Chen',
-  role: 'Computer Science Student Exploring AI, Data Mining, and Intelligent Systems',
-  affiliation: 'University of Chinese Academy of Sciences (UCAS)',
+  role: 'M.S. Student Exploring AI, Data Mining, and Intelligent Systems',
+  affiliation: 'Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS)',
   location: 'Beijing, China',
   email: 'ch3nweilun@gmail.com',
   tagline: 'Exploring artificial intelligence, data mining, and intelligent systems.',
@@ -30,7 +30,10 @@ export const projects: Array<{
 export const cvGroups = [
   {
     title: 'Education',
-    items: ['B.S. in Computer Science, University of Chinese Academy of Sciences (UCAS), 2022-2026'],
+    items: [
+      'M.S. in Computer Science, Institute of Computing Technology, Chinese Academy of Sciences (ICT, CAS)',
+      'B.S. in Computer Science, University of Chinese Academy of Sciences (UCAS), 2022-2026',
+    ],
   },
   {
     title: 'Interests',
